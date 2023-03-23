@@ -115,3 +115,17 @@ Thu 23 Mar 2023 07:57:49 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 6f46d4c
+Thu 23 Mar 2023 08:03:38 PM UTC: 
+ list.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:40:38: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+   40 |   if(list==NULL || list->head==NULL) return;
+      |                                      ^~~~~~
+list.c:39:8: note: declared here
+   39 | void * firstList(List * list) {
+      |        ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+694ba02
