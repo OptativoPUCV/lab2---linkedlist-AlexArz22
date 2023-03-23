@@ -86,29 +86,23 @@ void pushCurrent(List * list, void * data) {
   if(list==NULL || list->current==NULL) return;
   Node *nodo=createNode(data);
   
-  if(list->current->next==NULL)
+  if(list->current==list->tail)
   {
     list->current->next=nodo;
-    nodo->prev=list->current; 
+    list->tail=nodo;
+    list->tail->prev=list->current;
+    list->current=list->tail;
+    return;
   }
   else{
-    if(list->current==list->tail)
-    {
-      list->current->next=nodo;
-      list->tail=nodo;
-      list->tail->prev=list->current;
-      list->current=list->tail;
-      return;
-    }
-    else
-    {
-      Node *nodoSiguiente=list->current->next;
-      list->current->next=nodo;
-      nodo->prev=list->current;
-      list->current=list->current->next;
-      list->current->next=nodoSiguiente;
-      nodoSiguiente->prev=list->current;
-    }
+
+    Node *nodoSiguiente=list->current->next;
+    list->current->next=nodo;
+    nodo->prev=list->current;
+    list->current=list->current->next;
+    list->current->next=nodoSiguiente;
+    nodoSiguiente->prev=list->current;
+    
   }
   list->current=nodo;
 }
