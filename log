@@ -94,3 +94,9 @@ list.c:40:16: error: invalid operands to binary - (have ‘Node *’ and ‘void
       |                            void *
 Compilation failed
 ef91c2a
+Thu 23 Mar 2023 07:57:20 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+233e9b9
